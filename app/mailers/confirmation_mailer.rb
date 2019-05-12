@@ -1,6 +1,6 @@
 class ConfirmationMailer < ApplicationMailer
   def confirmation_mail(feed)
     @feed = feed
-    mail to: @feed.author_email, subject: "投稿確認メール"
+    mail to: @feed.author_email, subject: "投稿確認メール" if @feed.present?
   end
 end
